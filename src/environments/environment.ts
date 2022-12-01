@@ -3,8 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  API_KEY:"706678183a3adde83b3c45b0eeb7cf3d",
+  API_URL:"https://api.openweathermap.org/data/2.5/",
+  
+  IS_LOGGED: false,
+
+  firebaseConfig: {
+    apiKey: "AIzaSyBmgVkeHKB7gUULvd9ltpI0YXVH8L5JMKo",
+    authDomain: "hascandy1.firebaseapp.com",
+    projectId: "hascandy1",
+    storageBucket: "hascandy1.appspot.com",
+    messagingSenderId: "420601255274",
+    appId: "1:420601255274:web:608f157224f76f7fbd0113"
+  }
+  
+
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

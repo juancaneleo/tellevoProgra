@@ -30,7 +30,25 @@ const routes: Routes = [
   {
     path: 'coversor',
     loadChildren: () => import('./pages/coversor/coversor.module').then( m => m.CoversorPageModule)
-  }
+  },
+  {
+    path: '404', loadChildren: () => import('./pages/error/error.module').then( m => m.ErrorPageModule)
+  },
+  {
+    path: 'clima',
+    loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: '**', redirectTo: '/404'
+  },
+
+ 
+
+
 ];
 
 @NgModule({

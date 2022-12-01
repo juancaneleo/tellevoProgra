@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-animacion',
@@ -8,10 +9,17 @@ import {Router} from '@angular/router'
 })
 export class AnimacionPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    if (environment.IS_LOGGED == false){
+      this.router.navigate(['login'])
+    }
+   }
 
   ngOnInit() {
       setTimeout(() => {
+        if(environment.IS_LOGGED == false){
+          this.router.navigate(['login'])
+        }
         this.router.navigate(['login']);
     }, 1000);
   }

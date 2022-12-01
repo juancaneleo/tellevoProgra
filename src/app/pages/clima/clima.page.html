@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Clima Hoy</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+
+  <ion-card-content>
+    <span *ngIf="weatherTemp,weatherDescription">
+      <ion-row>
+        <p class="cli-comp-p">
+          <img src="http://openweathermap.org/img/wn/{{weatherDescription.icon}}@2x.png" class="cli-comp-img">
+          {{(weatherTemp.temp).toFixed(0)}}° <br>
+          {{weatherDescription.description}}
+        </p>
+      </ion-row>
+    </span>
+  </ion-card-content>
+</ion-card>
+</ion-content>

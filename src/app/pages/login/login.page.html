@@ -12,19 +12,20 @@
     </div>
   <div>
       <div class="ion-text-center">
-        <ion-label>Nombre de usuario</ion-label>
+        <ion-label>Correo</ion-label>
       </div>
     <ion-item class="ion-margin-top">
-      <ion-input type="text" required [(ngModel)]="user.name" placeholder="Username"></ion-input>
+      <ion-input type="email" required [(ngModel)]="mail"  class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}" placeholder="Introduzca su contraseña correo"></ion-input>
     </ion-item>
       <div class="ion-text-center ion-margin-top">
-        <ion-label  >Contraseña</ion-label>
+        <ion-label class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}" >Contraseña</ion-label>
       </div>
     <ion-item class="ion-margin-top">
-            <ion-input type="password" [(ngModel)]="user.password"  placeholder="Password"></ion-input>
+            <ion-input type="password" [(ngModel)]="pass"  placeholder="Introduzca su contraseña"></ion-input>
     </ion-item>
   </div>
-  <ion-button class="btn" (click)="login()" color="warning" expand="block">Entrar</ion-button>
+  <ion-button class="btn" (click)="logIn()" color="warning" expand="block">Entrar</ion-button>
+  <ion-button class="btn" (click)="goRegister()" color="warning" expand="block">registrarse</ion-button>
 
 </ion-content>
 
