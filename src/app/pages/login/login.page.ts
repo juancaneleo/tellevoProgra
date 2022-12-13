@@ -5,6 +5,8 @@ import { ToastController } from '@ionic/angular';
 import { MenuController } from '@ionic/angular';
 import { IonRouterOutlet } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
+import { CrudService } from 'src/app/services/crud.service';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,7 @@ export class LoginPage implements OnInit {
   field: string = '';
 
 
-  constructor(private toastCtrl: ToastController, private router: Router, private menu: MenuController, private routerOutlet: IonRouterOutlet, private _auth : AuthService, private _router: Router) {
+  constructor(private toastCtrl: ToastController, private router: Router, private menu: MenuController, private routerOutlet: IonRouterOutlet, private _auth : AuthService, private _router: Router, private crud: CrudService) {
 
   }
 
@@ -36,18 +38,33 @@ export class LoginPage implements OnInit {
   logIn(){
     var mail = this.mail;
     var contra = this.pass;
+    var mailenv = mail.replace(".","").replace(".","").replace("@","")
     this._auth.login(mail, contra).then(res=> {
       console.log(res);
       if (res != null) {
-        this.router.navigate(['bienvenida'])
         environment.IS_LOGGED = true;
+        environment.IDENTIFIER = mailenv;
+        this.router.navigate(['bienvenida'])
       }
     });
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        environment.ID_USER = uid;
+        
+      } else {
+        console.log("no hay id");
+        
+      }
+    });
+
   }
   
   goRegister(){
     this.router.navigate(['register'])
   }
+
   
   
 

@@ -9,6 +9,11 @@ export const environment = {
   API_URL:"https://api.openweathermap.org/data/2.5/",
   
   IS_LOGGED: false,
+  IS_REGISTERED: false,
+  NAME: "",
+  IDENTIFIER: "",
+  ID_USER: "",
+
 
   firebaseConfig: {
     apiKey: "AIzaSyBmgVkeHKB7gUULvd9ltpI0YXVH8L5JMKo",

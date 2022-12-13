@@ -43,8 +43,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: '**', redirectTo: '/404'
+    path: 'register-form',
+    loadChildren: () => import('./pages/register-form/register-form.module').then( m => m.RegisterFormPageModule)
   },
+  {
+    path: '**', redirectTo: '/404'
+  },  {
+    path: 'conductor',
+    loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule)
+  },
+
+  
+
 
  
 

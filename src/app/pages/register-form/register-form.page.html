@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>formulario de registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-item>
+  <ion-label>nombre de usuario</ion-label>
+    <ion-input [(ngModel)]="nombre" placeholder="este nombre será publico"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>telefono</ion-label>
+    <ion-input [(ngModel)]="numero" placeholder=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-select [(ngModel)]="tipo" placeholder="seleciona que deseas ser">
+      <ion-select-option value="chofer">chofer</ion-select-option>
+      <ion-select-option value="pasajero">pasajero</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="registerForm()">
+      registrarse
+    </ion-button>
+  </ion-item>
+<ion-content>
+
+</ion-content>
