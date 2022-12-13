@@ -16,7 +16,7 @@ export const environment = {
 
 
   firebaseConfig: {
-    apiKey: "AIzaSyBmgVkeHKB7gUULvd9ltpI0YXVH8L5JMKo",
+    apiKey: "",
     authDomain: "hascandy1.firebaseapp.com",
     projectId: "hascandy1",
     storageBucket: "hascandy1.appspot.com",
