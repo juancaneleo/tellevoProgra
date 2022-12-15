@@ -20,6 +20,7 @@ export class CrudService {
       nombre: nombre,
       numero: numero,
       tipo: tipo,
+      enviaje: false,
     });
   }
 

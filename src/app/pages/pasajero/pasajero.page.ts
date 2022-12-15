@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get, onValue, set, update } from "firebase/database";
+import { getDatabase, ref, get, onValue, set, update, child } from "firebase/database";
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -18,11 +19,22 @@ renderer: any;
 div: any;
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
 
     this.loadData()
+    this.app = initializeApp(environment.firebaseConfig);
+      const dbRef = ref(getDatabase(this.app));
+      get(child(dbRef, `usuarios/${environment.ID_USER}`)).then((snapshot) => {
+        
+        if (snapshot.val().enviaje == true){
+          this.router.navigate(['enviaje'])
+        }
+      }).catch((error) => {
+        console.error(error);
+      });
+
   }
 
 
@@ -33,9 +45,14 @@ div: any;
   }
   
   elegir(id){
-    const writeRef = ref(this.db, 'viajes/' + id + '/');
+    var writeRef = ref(this.db, 'viajes/' + id + '/');
     update(writeRef, {
       pasajero: environment.NAME, 
     })
+    var writeRef = ref(this.db, `usuarios/${environment.ID_USER}`);
+    update(writeRef, {
+      enviaje: true
+    })
+    this.router.navigate(['enviaje'])
   }
 }

@@ -47,9 +47,6 @@ export class BienvenidaPage implements OnInit {
   
 
     
-    //if (environment.IS_REGISTERED == false){
-     // this.router.navigate(['register-form'])
-    //}
   
     this.menu.enable(true)
     this.routerOutlet.swipeGesture = true;

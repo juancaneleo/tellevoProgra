@@ -59,8 +59,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
   },
   {
+    path: 'enviaje',
+    loadChildren: () => import('./pages/enviaje/enviaje.module').then( m => m.EnviajePageModule)
+  },
+  {
     path: '**', redirectTo: '/404'
   }
+
 
   
 
