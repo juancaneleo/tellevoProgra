@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pasajero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ul class="contenedor">
+    <li [attr.id]="[element.userid]" class="item"  *ngFor="let element of data">
+      <div >
+      <p>comuna de destino: {{element.comuna}}</p>
+      <ion-button (click) ="elegir([element.userid])" color="dark"> elegir viaje</ion-button>
+      </div>
+      <div>
+      <p class="precio">precio: {{element.tarifa}}</p>
+      </div>
+    </li>
+  </ul>
+
+</ion-content>

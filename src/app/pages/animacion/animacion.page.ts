@@ -10,18 +10,19 @@ import { environment } from 'src/environments/environment';
 export class AnimacionPage implements OnInit {
 
   constructor(private router: Router) {
-    if (environment.IS_LOGGED == false){
-      this.router.navigate(['login'])
-    }
    }
 
   ngOnInit() {
       setTimeout(() => {
-        if(environment.IS_LOGGED == false){
-          this.router.navigate(['login'])
+        if(environment.RELOAD == true){
+          environment.RELOAD = false
+          this.router.navigate(['miviaje'])
+        } else {
+          this.router.navigate(['login']);
         }
-        this.router.navigate(['login']);
     }, 1000);
+    
+    
   }
 
 }

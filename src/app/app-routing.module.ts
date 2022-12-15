@@ -47,11 +47,22 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register-form/register-form.module').then( m => m.RegisterFormPageModule)
   },
   {
-    path: '**', redirectTo: '/404'
-  },  {
     path: 'conductor',
     loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule)
   },
+  {
+    path: 'miviaje',
+    loadChildren: () => import('./pages/miviaje/miviaje.module').then( m => m.MiviajePageModule)
+  },
+  {
+    path: 'pasajero',
+    loadChildren: () => import('./pages/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
+  },
+  {
+    path: '**', redirectTo: '/404'
+  }
+
+  
 
   
 

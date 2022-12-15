@@ -29,7 +29,6 @@ export class ClimaService {
   api(){
     this.http.get<any>("https://api.openweathermap.org/data/2.5/weather?lat=" + this.lat + "&lon=" + this.lon + "&appid=" + this.apikey).subscribe(res => {
       console.log(this.lon, this.lat);
-      
       console.log(res.name);
       return res
    })

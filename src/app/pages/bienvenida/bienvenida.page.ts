@@ -32,10 +32,8 @@ export class BienvenidaPage implements OnInit {
       const dbRef = ref(getDatabase(this.app));
       get(child(dbRef, `usuarios/${environment.ID_USER}`)).then((snapshot) => {
         if (snapshot.exists()) {
-          console.log("este es el wn ->");
-          
-          console.log(snapshot.val());
-
+          environment.NAME = snapshot.val().nombre
+          alert(snapshot.val().nombre)
 
         } else {
           console.log("No data available");
@@ -48,7 +46,6 @@ export class BienvenidaPage implements OnInit {
     environment.IS_REGISTERED = true;
   
 
-    alert("is registred = " + environment.IS_REGISTERED)
     
     //if (environment.IS_REGISTERED == false){
      // this.router.navigate(['register-form'])

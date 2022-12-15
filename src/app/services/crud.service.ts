@@ -38,17 +38,24 @@ export class CrudService {
       });
   }
 
-  addViaje(comuna, userid, numero) {
+  addViaje(comuna, userid, numero, tarifa) {
     set(ref(this.database, 'viajes/' + userid), {
       userid: userid,
       comuna: comuna,
       numero: numero,
+      tarifa: tarifa,
+    });
+  }
+  
+  addPasajero(userid) {
+    set(ref(this.database, 'viajes/' + userid), {
+      pasajero: userid,
     });
   }
 
   mostrarViajes(userid) {
     const db = getDatabase();
-    const starCountRef = ref(db, 'posts/' + userid);
+    const starCountRef = ref(db, 'viajes/' + userid);
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       console.log(data);
