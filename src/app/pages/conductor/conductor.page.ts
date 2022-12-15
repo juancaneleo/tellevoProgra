@@ -72,6 +72,7 @@ export class ConductorPage implements OnInit {
   
   addregistro(){
     this.crud.addViaje(this.comuna, environment.ID_USER, this.numero, this.tarifa)
+    this.crud.addViajeRegistro(environment.ID_USER)
     this.router.navigate(['miviaje'])
   }
 

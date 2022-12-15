@@ -48,10 +48,12 @@ div: any;
     var writeRef = ref(this.db, 'viajes/' + id + '/');
     update(writeRef, {
       pasajero: environment.NAME, 
+      pasajeroid: environment.IDENTIFIER, 
     })
     var writeRef = ref(this.db, `usuarios/${environment.ID_USER}`);
     update(writeRef, {
-      enviaje: true
+      enviaje: true,
+      viaje: id
     })
     this.router.navigate(['enviaje'])
   }

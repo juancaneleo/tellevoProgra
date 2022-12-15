@@ -5,5 +5,14 @@
 </ion-header>
 
 <ion-content>
+  <div>
+    <p>ya estas dentro de un viaje!</p>
+    <p>tu chofer es: {{conductor}}</p>
+    <p>nos dio este numero para que lo llamaras: {{numero}}</p>
+    <p>en caso de que no conteste este es el numero asignado a su cuenta: {{numerodado}}</p>
+  </div>
+  <ion-button (click) = "eliminarViaje()">
+    salir del viaje
+  </ion-button>
 
 </ion-content>

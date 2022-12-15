@@ -47,6 +47,11 @@ export class CrudService {
       tarifa: tarifa,
     });
   }
+  addViajeRegistro(id){
+    set(ref(this.database, 'registroViajes/' + id), {
+      activo: true
+    })
+  }
   
   addPasajero(userid) {
     set(ref(this.database, 'viajes/' + userid), {
