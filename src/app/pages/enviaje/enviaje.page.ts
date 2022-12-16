@@ -41,6 +41,7 @@ export class EnviajePage implements OnInit {
   } 
   
   getDatos(){
+    alert(this.idViaje)
     var dbRef = ref(this.db, `viajes/${this.idViaje}`)
     get(dbRef).then(snap => {
       this.numerodado = snap.val().numero

@@ -63,17 +63,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/enviaje/enviaje.module').then( m => m.EnviajePageModule)
   },
   {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
     path: '**', redirectTo: '/404'
   }
-
-
-  
-
-  
-
-
- 
-
 
 ];
 

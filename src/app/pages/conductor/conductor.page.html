@@ -17,12 +17,11 @@
       <ion-input type="text" required [(ngModel)]="comuna" placeholder="Introduzca la comuna de destino"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-top">
-      <ion-input type="text" required [(ngModel)]="numero" placeholder="Introduzca su numero de contacto"></ion-input>
+      <ion-input type="number" required [(ngModel)]="numero" placeholder="Introduzca su numero de contacto"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-top">
-      <ion-input type="text" required [(ngModel)]="tarifa" placeholder="Introduzca el precio que quiere cobrar por el viaje"></ion-input>
+      <ion-input type="number" required [(ngModel)]="tarifa" placeholder="Introduzca el precio que quiere cobrar por el viaje"></ion-input>
     </ion-item>
   </div>
   <ion-button class="btn" (click)="addregistro()" color="warning" expand="block">mandar viaje</ion-button>
-
 </ion-content>

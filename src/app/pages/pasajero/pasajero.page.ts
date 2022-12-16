@@ -36,7 +36,38 @@ div: any;
       });
 
   }
+  ionViewDidEnter() {
 
+    if (environment.IS_LOGGED == false){
+      this.router.navigate(['login'])
+    }
+    this.app = initializeApp(environment.firebaseConfig);
+    const dbRef = ref(getDatabase(this.app));
+
+
+      get(child(dbRef, `usuarios/${environment.ID_USER}`)).then((snapshot :any) => {
+        console.log(snapshot)
+        console.log(snapshot.val().tipo)
+
+        if (snapshot.exists()) {
+          if (snapshot.val().tipo != "pasajero") {
+          alert("debes ser pasajero para acceder aqui")
+          this.router.navigate(['bienvenida'])
+
+            
+          }
+
+        } else {
+          console.log("No data available");
+          this.router.navigate(['register-form'])
+        }
+        
+      }).catch((error) => {
+        console.error(error);
+      });
+      }
+
+    
 
   loadData(){
     onValue(this.dbRef, (snapshot) => {

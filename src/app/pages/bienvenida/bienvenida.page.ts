@@ -33,7 +33,6 @@ export class BienvenidaPage implements OnInit {
       get(child(dbRef, `usuarios/${environment.ID_USER}`)).then((snapshot) => {
         if (snapshot.exists()) {
           environment.NAME = snapshot.val().nombre
-          alert(snapshot.val().nombre)
 
         } else {
           console.log("No data available");
